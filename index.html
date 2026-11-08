@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Priscilla Dede Tetteh | Full Stack Web Developer</title>
+<meta name="description" content="Full stack web developer in Accra who started in customer support. React, JavaScript, and internal tools.">
+<style>
+:root{--paper:#f2f0fa;--ink:#1c1230;--soft:#5b5270;--pink:#d4146f;--violet:#5b3fd9;--line:#d9d4ea;--card:#fbfaff}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:17px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:-20%;z-index:-1;background:
+radial-gradient(circle at 20% 20%,rgba(212,20,111,.16),transparent 40%),
+radial-gradient(circle at 80% 30%,rgba(91,63,217,.16),transparent 42%),
+radial-gradient(circle at 50% 90%,rgba(212,20,111,.1),transparent 45%);animation:drift 22s ease-in-out infinite alternate}
+body::after{content:"";position:fixed;inset:0;z-index:-1;background-image:radial-gradient(rgba(28,18,48,.14) 1px,transparent 1px);background-size:26px 26px;mask-image:linear-gradient(#000,transparent 85%)}
+@keyframes drift{to{transform:translate(4%,3%) scale(1.08)}}
+h1,h2,h3{font-family:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;line-height:1.1;letter-spacing:-.01em}
+a{color:var(--violet)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0}
+nav b{font-family:Georgia,serif;font-size:1.15rem}
+nav div{display:flex;gap:22px;font-size:.95rem}
+nav a{color:var(--ink);text-decoration:none}
+nav a:hover{color:var(--pink)}
+.hero{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center;padding:64px 0 88px}
+.hero h1{font-size:clamp(2.6rem,6vw,4.6rem);font-weight:700}
+.role{margin-top:18px;font-size:1.25rem;min-height:2em;color:var(--soft)}
+.role span{border-right:3px solid var(--pink);padding-right:4px;animation:blink .8s steps(1) infinite}
+@keyframes blink{50%{border-color:transparent}}
+.hero p.lead{margin-top:14px;max-width:34em}
+.btns{display:flex;gap:14px;margin-top:28px;flex-wrap:wrap}
+.btn{display:inline-block;padding:13px 24px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--ink);color:var(--ink);transition:transform .2s,background .2s}
+.btn.main{background:var(--ink);color:#fff}
+.btn:hover{transform:translateY(-3px)}
+.ticket{background:var(--card);border:2px solid var(--ink);border-radius:18px;padding:22px;box-shadow:10px 10px 0 var(--pink);font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.92rem;transform:rotate(1.5deg)}
+.ticket h3{font-family:inherit;font-size:1rem;margin-bottom:12px;display:flex;justify-content:space-between;gap:10px}
+.ticket ol{list-style:none;padding:0}
+.ticket li{padding:7px 0;border-top:1px dashed var(--line);display:flex;gap:10px;opacity:0;transform:translateY(6px);transition:opacity .4s,transform .4s}
+.ticket li.on{opacity:1;transform:none}
+.ticket li::before{content:"\2713";color:var(--pink);font-weight:700}
+.stamp{display:inline-block;margin-top:14px;padding:4px 12px;border:2px solid var(--violet);color:var(--violet);border-radius:6px;font-weight:700;opacity:0;transform:scale(1.6) rotate(-6deg);transition:.35s}
+.stamp.on{opacity:1;transform:rotate(-6deg)}
+section{padding:64px 0;border-top:1px solid var(--line)}
+section h2{font-size:clamp(1.9rem,4vw,2.8rem);margin-bottom:28px}
+.about{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.about p+p{margin-top:14px}
+.facts{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px}
+.fact b{display:block;font-family:Georgia,serif;font-size:2.1rem;color:var(--pink);line-height:1}
+.fact span{font-size:.9rem;color:var(--soft)}
+.job{display:grid;grid-template-columns:200px 1fr;gap:24px;padding:22px 0;border-top:1px dashed var(--line)}
+.job:first-of-type{border-top:0}
+.job time{color:var(--soft);font-size:.95rem}
+.job h3{font-size:1.35rem}
+.job .co{color:var(--soft);margin-bottom:8px}
+.job ul{padding-left:18px}
+.job li{margin:4px 0}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+.card{background:var(--card);border:2px solid var(--ink);border-radius:16px;padding:24px;transition:transform .2s,box-shadow .2s}
+.card:hover{transform:translate(-4px,-4px);box-shadow:6px 6px 0 var(--violet)}
+.card h3{font-size:1.35rem;margin-bottom:8px}
+.card p{color:var(--soft);font-size:.98rem}
+.tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.tags span{font-size:.82rem;padding:3px 11px;border-radius:999px;background:#e8e3fb;color:var(--violet);font-weight:600}
+.skills{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.skills h3{font-size:1.15rem;margin-bottom:8px}
+.skills p{color:var(--soft)}
+.contact{text-align:center}
+.contact p{max-width:30em;margin:0 auto 24px}
+.contact .btns{justify-content:center}
+footer{padding:28px 0 40px;text-align:center;color:var(--soft);font-size:.9rem}
+@media(max-width:820px){.hero,.about,.cards,.skills{grid-template-columns:1fr}.job{grid-template-columns:1fr;gap:4px}.hero{padding-top:32px}nav div{gap:14px}.ticket{transform:none}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.ticket li,.stamp{opacity:1;transform:none}.stamp{transform:rotate(-6deg)}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav aria-label="Main"><b>Priscilla Tetteh</b><div><a href="#work">Work</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div></nav>
+
+<header class="hero">
+<div>
+<h1>Priscilla Dede Tetteh</h1>
+<div class="role" aria-live="polite"><span id="typed">Full stack web developer</span></div>
+<p class="lead">I build and fix web apps with React and JavaScript in Accra. I started in customer support, so I know what a broken screen feels like from the other side of the ticket.</p>
+<div class="btns"><a class="btn main" href="#projects">See my work</a><a class="btn" href="#contact">Get in touch</a></div>
+</div>
+<aside class="ticket" aria-label="Animated example of a ticket from report to release">
+<h3><span>Ticket from a user</span><span>Fixed</span></h3>
+<ol id="steps">
+<li>Problem reported</li><li>Reproduced and debugged</li><li>Fix raised as a pull request</li><li>Reviewed and tested in staging</li><li>Released to production</li>
+</ol>
+<div class="stamp" id="stamp">Resolved</div>
+</aside>
+</header>
+
+<section id="about" class="about">
+<div>
+<h2>About</h2>
+<p>I spent over a year in customer success on a SaaS platform, working through tickets in Jira and explaining fixes to people who were not technical. Then I moved into the engineering team at Nexa Labs.</p>
+<p>Today I resolve front-end and back-end tickets, redesign internal tools, and ship through pull requests and staging. I am finishing my BSc in Information Technology at Accra Institute of Technology.</p>
+</div>
+<div class="facts" aria-label="Numbers">
+<div class="fact"><b>62</b><span>front-end and back-end tickets resolved in about 5 months</span></div>
+<div class="fact"><b>79%</b><span>of 245 support tickets fully resolved within deadline</span></div>
+<div class="fact"><b>~500</b><span>staff at MGL, the company the HR training tracker was built for</span></div>
+<div class="fact"><b>5</b><span>web apps built and deployed live during training</span></div>
+</div>
+</section>
+
+<section id="work">
+<h2>Where I have worked</h2>
+<div class="job"><time>Mar 2026 to now</time><div><h3>Full Stack Web Developer</h3><div class="co">Nexa Labs, remote</div><ul><li>Resolve front-end and back-end tickets by debugging, raising pull requests, and testing in staging before production.</li><li>Redesigned four internal apps: inventory, fleet management, team chat, and parts of the wiki.</li></ul></div></div>
+<div class="job"><time>Dec 2024 to Mar 2026</time><div><h3>Customer Success Representative</h3><div class="co">Nexa Labs, remote</div><ul><li>Fully resolved 194 of 245 tickets within priority deadlines and guided customers through the rest.</li><li>Escalated confirmed bugs to engineers and wrote fixes into the knowledge base.</li></ul></div></div>
+<div class="job"><time>Aug to Nov 2023</time><div><h3>IT Intern</h3><div class="co">MGL Limited, Koforidua</div><ul><li>Built a web app for HR to assign courses and track learning progress.</li></ul></div></div>
+</section>
+
+<section id="projects">
+<h2>Projects</h2>
+<div class="cards">
+<article class="card"><h3>Internal tool redesigns</h3><p>New interfaces for inventory, fleet management, parts of the company wiki, and team chat, built from the product team's designs.</p><div class="tags"><span>React</span><span>JavaScript</span><span>Nexa Labs</span></div></article>
+<article class="card"><h3>Citadel website</h3><p>Built parts of the public website for Citadel, the platform that brings these internal apps together.</p><div class="tags"><span>React</span><span>HTML and CSS</span></div></article>
+<article class="card"><h3>HR training tracker</h3><p>A web app where HR assigns courses to factory staff and sees each person's progress.</p><div class="tags"><span>Web app</span><span>MGL Limited</span></div></article>
+<article class="card"><h3>Training apps</h3><p>Five apps built from written requirements during my engineering training, all running live.</p><div class="tags"><span>Front end</span><span>Back end</span><span>Deployed</span></div></article>
+</div>
+</section>
+
+<section id="skills">
+<h2>Skills</h2>
+<div class="skills">
+<div><h3>Build</h3><p>JavaScript, React, React Native, HTML and CSS, REST APIs</p></div>
+<div><h3>Ship</h3><p>Git and GitHub, pull requests, code review, staging and production testing</p></div>
+<div><h3>Support</h3><p>Jira, Confluence, troubleshooting, clear written communication</p></div>
+</div>
+</section>
+
+<section id="contact" class="contact">
+<h2>Let's talk</h2>
+<p>I am looking for a role in web development, technical support, or IT support in Accra or remote.</p>
+<div class="btns"><a class="btn main" href="mailto:priscilla.d.tetteh@gmail.com">Email me</a><a class="btn" href="https://linkedin.com/in/priscillatetteh26">LinkedIn</a><a class="btn" href="https://github.com/ptetteh-dev">GitHub</a></div>
+</section>
+<footer>Priscilla Dede Tetteh, Accra, Ghana</footer>
+</div>
+
+<script>
+(function(){
+  var steps=[].slice.call(document.querySelectorAll('#steps li')),stamp=document.getElementById('stamp'),typed=document.getElementById('typed');
+  var still=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(still)return;
+  var words=['Full stack web developer','Customer success background','React and JavaScript'],w=0,c=0,del=false;
+  function type(){
+    var word=words[w];
+    typed.textContent=word.slice(0,c);
+    if(!del&&c<word.length){c++;setTimeout(type,70)}
+    else if(!del){del=true;setTimeout(type,1600)}
+    else if(c>0){c--;setTimeout(type,35)}
+    else{del=false;w=(w+1)%words.length;setTimeout(type,300)}
+  }
+  typed.textContent='';type();
+  steps.forEach(function(li,i){setTimeout(function(){li.classList.add('on')},700+i*650)});
+  setTimeout(function(){stamp.classList.add('on')},700+steps.length*650);
+})();
+</script>
+</body>
+</html>
